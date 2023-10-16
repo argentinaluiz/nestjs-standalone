@@ -1,8 +1,8 @@
 import { RabbitSubscribe } from '@golevelup/nestjs-rabbitmq';
-import { Injectable } from '@nestjs/common';
+import { Controller, Injectable } from '@nestjs/common';
 
 @Injectable()
-export class XptoService {
+export class ProductsRabbitMqConsumer {
   @RabbitSubscribe({
     exchange: 'amq.direct',
     routingKey: 'test',

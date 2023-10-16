@@ -2,9 +2,9 @@ import { Controller } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
 
 @Controller()
-export class GrpcServerController {
+export class ProductsGrpcServer {
   @GrpcMethod('GrpcService')
   find() {
-    return { text: 'Hello World!' };
+    return { name: 'product test' };
   }
 }

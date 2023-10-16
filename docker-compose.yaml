@@ -7,6 +7,7 @@ services:
       - .:/home/node/app
     ports:
       - 3000:3000
+      - 50051:50051
   
   zookeeper:
     image: confluentinc/cp-zookeeper:7.3.0

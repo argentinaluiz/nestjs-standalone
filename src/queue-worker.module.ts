@@ -1,11 +1,7 @@
 import { Module } from '@nestjs/common';
-import { RestModule } from './rest/rest.module';
-import { GrpcServerModule } from './grpc-server/grpc-server.module';
-import { KafkaConsumerModule } from './kafka-consumer/kafka-consumer.module';
-import { XptoModule } from './xpto/xpto.module';
 import { ConfigModule } from '@nestjs/config';
 import { BullModule } from '@nestjs/bull';
-import { QueueSeparateModule } from './queue-separate/queue-separate.module';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
@@ -18,11 +14,7 @@ import { QueueSeparateModule } from './queue-separate/queue-separate.module';
         port: 6379,
       },
     }),
-    RestModule,
-    GrpcServerModule,
-    KafkaConsumerModule,
-    XptoModule,
-    QueueSeparateModule.register({ enableConsumers: true }),
+    ProductsModule.register({ enableQueueConsumers: true }),
   ],
 })
 export class QueueWorkerModule {}

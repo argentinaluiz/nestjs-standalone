@@ -10,7 +10,7 @@ async function bootstrap() {
     transport: Transport.GRPC,
     options: {
       package: 'fullcycle_package',
-      protoPath: join(__dirname, 'grpc-server/grpc.proto'),
+      protoPath: join(__dirname, 'products/grpc.proto'),
       url: '0.0.0.0:50051',
     },
   });
